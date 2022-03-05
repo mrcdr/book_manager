@@ -4,8 +4,6 @@ from flask_restful import Api
 from resources.book import Book, BookList
 from resources.user import UserList
 
-import initialize_db
-
 from db import db
 
 app = Flask(__name__)

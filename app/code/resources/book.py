@@ -4,10 +4,6 @@ from models.book import BookModel
 
 class Book(Resource):
     parser = reqparse.RequestParser()
-    parser.add_argument("id",
-                        type=int,
-                        required=True,
-                        help="Book ID")
     parser.add_argument("to_borrow",
                         type=bool,
                         required=True,
@@ -22,10 +18,10 @@ class Book(Resource):
             return book.json()
         return {"message": "Book not found"}, 404
 
-    def patch(self, name):
+    def patch(self, _id):
         data = Book.parser.parse_args()
 
-        book = BookModel.find_by_name(id)
+        book = BookModel.find_by_id(_id)
 
         if book is None:
             return {"message": "Book not found"}, 404

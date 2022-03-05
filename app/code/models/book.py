@@ -25,7 +25,7 @@ class BookModel(db.Model):
                 "author": self.author,
                 "is_borrowed": self.is_borrowed,
                 "borrower": self.borrower,
-                "borrow_date": self.borrow_date}
+                "borrow_date": self.borrow_date.strftime("%Y-%m-%d") if self.borrow_date else None}
 
     def borrow(self, borrower):
         self.is_borrowed = True
