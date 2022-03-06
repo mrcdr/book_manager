@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>書籍貸出管理</title>
+  <link rel="stylesheet" href="./main.css">
+</head>
+<body>
+
+  <div id="app">
+    <h1>書籍貸出管理</h1>
+
+    <table>
+      <thead v-pre>
+        <tr>
+          <th class="id">ID</th>
+          <th class="name">名前</th>
+          <th class="author">著者</th>
+          <th class="borrower">貸出者</th>
+          <th class="borrow_date">貸出日</th>
+          <th class="button">-</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr
+          v-for="item in books"
+          v-bind:key="item.id">
+          <th>{{ item.id }}</th>
+          <td>{{ item.name }}</td>
+          <td>{{ item.author }}</td>
+          <td>{{ item.is_borrowed ? item.borrower : "" }}</td>
+          <td>{{ item.is_borrowed ? item.borrow_date : "" }}</td>
+          <td class="button">
+            <button v-on:click="edit(item)"
+                    v-bind:class="{is_borrowed:item.is_borrowed}">
+              {{ item.is_borrowed?"返却":"貸出"}}
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <modal-borrow
+      v-bind:item="item"
+      v-if="borrowModalShow"
+      v-on:from-child-ok="borrowModalOK"
+      v-on:from-child-cancel="closeBorrowModal"></modal-borrow>
+
+    <modal-take-back
+      v-bind:item="item"
+      v-bind:borrower="borrower"
+      v-if="takeBackModalShow"
+      v-on:from-child-ok="takeBackModalOK"
+      v-on:from-child-cancel="closeTakeBackModal"></modal-take-back>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+  <script src="./main.js"></script>
+</body>
+</html>

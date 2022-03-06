@@ -1,0 +1,95 @@
+* {
+  box-sizing: border-box;
+}
+
+#app {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead th {
+  border-bottom: 2px solid #0090FF;
+  color: #0090FF;
+}
+
+th,
+th {
+  padding: 0 8px;
+  line-height: 40px;
+}
+
+thead th.id {
+  width: 50px;
+}
+
+thead th.button {
+  width: 60px;
+}
+
+tbody td.button, tbody td.state {
+  text-align: center;
+}
+
+tbody tr td,
+tbody tr th {
+  border-bottom: 1px solid #ccc;
+  padding: 0 5px;
+  transition: all 0.4s;
+  max-width: 200px
+}
+
+tbody tr:hover td,
+tbody tr:hover th {
+  background: #EEEEEE;
+}
+
+button {
+  border: none;
+  border-radius: 10px;
+  line-height: 24px;
+  padding: 0 8px;
+  background: #0090FF;
+  color: #FFFFFF;
+  cursor: pointer;
+  opacity:100%
+}
+
+button[disabled] {
+  opacity:20%;
+}
+
+tbody tr td button {
+  background: #3366CC;
+  color: #FFFFFF;
+}
+
+tbody tr td button.is_borrowed {
+  background: #CC3366;
+}
+
+.content{
+  z-index:10;
+  width:50%;
+  padding: 1em;
+  background:#FFFFFF;
+}
+
+.overlay{
+  z-index:1;
+
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background-color:rgba(0,0,0,0.5);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
