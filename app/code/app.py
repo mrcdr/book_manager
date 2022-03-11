@@ -18,7 +18,6 @@ def create_tables():
 
 api.add_resource(Book, "/api/book/<int:_id>")
 api.add_resource(BookList, "/api/books")
-api.add_resource(UserList, "/api/users")
 
 if __name__ == "__main__":
     app.run(debug=True)
