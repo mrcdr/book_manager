@@ -1,5 +1,6 @@
+Werkzeug
 Flask
 Flask-RESTful
-Flask-JWT
+Flask-HTTPAuth
 Flask-SQLAlchemy
 uWSGI

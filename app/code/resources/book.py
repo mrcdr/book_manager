@@ -1,4 +1,5 @@
 from flask_restful import Resource, reqparse
+from auth import auth
 from models.book import BookModel
 
 
@@ -26,6 +27,7 @@ class Book(Resource):
 
         return {"message": "Book not found"}, 404
 
+    @auth.login_required
     def put(self, _id):
         book = BookModel.find_by_id(_id)
         data = Book._parser_post.parse_args()
@@ -40,6 +42,7 @@ class Book(Resource):
 
         return book.json()
 
+    @auth.login_required
     def delete(self, _id):
         book = BookModel.find_by_id(_id)
         if book is None:
@@ -80,6 +83,7 @@ class BookList(Resource):
     def get(self):
         return {"books": list(map(lambda x: x.json(), BookModel.query.all()))}
 
+    @auth.login_required
     def post(self):
         data = Book.parser_post.parse_args()
         book = BookModel(**data)

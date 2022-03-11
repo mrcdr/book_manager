@@ -6,6 +6,9 @@ services:
       - ./app/code:/app:ro
       - ./app/code/data:/app/data
       - socket:/tmp
+    environment:
+      - BM_ADMIN_NAME=admin
+      - BM_ADMIN_PASSWORD=password
     command: uwsgi --ini /app/app.ini
 
   web:
