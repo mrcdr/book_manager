@@ -123,7 +123,7 @@ new Vue({
         },
 
         patchData: function(item, borrower="") {
-            endpoint = "/api/book/" + String(item.id)
+            endpoint = "/api/books/" + String(item.id)
 
             data = {to_borrow: !(item.is_borrowed),
                     borrower: borrower}

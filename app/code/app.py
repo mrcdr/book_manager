@@ -16,7 +16,7 @@ db.init_app(app)
 def create_tables():
     db.create_all()
 
-api.add_resource(Book, "/api/book/<int:_id>")
+api.add_resource(Book, "/api/books/<int:_id>")
 api.add_resource(BookList, "/api/books")
 
 if __name__ == "__main__":
