@@ -3,8 +3,7 @@ services:
   app:
     build: ./app
     volumes:
-      - ./app/code:/app:ro
-      - ./app/code/data:/app/data
+      - /app_data
       - socket:/tmp
     environment:
       - BM_ADMIN_NAME=admin

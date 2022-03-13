@@ -7,7 +7,7 @@ from resources.user import UserList
 from db import db
 
 app = Flask(__name__)
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///data/data.db"
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:////app_data/data.db"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 api = Api(app)
 db.init_app(app)
