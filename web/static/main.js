@@ -129,11 +129,12 @@ new Vue({
                     borrower: borrower}
 
             axios.patch(endpoint, data)
+            .then(responce => {
+                this.fetchData()
+            })
             .catch(error => {
                 console.log(error)
             })
-
-            this.fetchData()
         }
     }
 })
