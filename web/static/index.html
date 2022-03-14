@@ -2,6 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>書籍貸出管理</title>
   <link rel="stylesheet" href="./main.css">
 </head>
@@ -13,7 +14,6 @@
     <table>
       <thead v-pre>
         <tr>
-          <th class="id">ID</th>
           <th class="name">名前</th>
           <th class="author">著者</th>
           <th class="borrower">貸出者</th>
@@ -26,7 +26,6 @@
         <tr
           v-for="item in books"
           v-bind:key="item.id">
-          <th>{{ item.id }}</th>
           <td>{{ item.name }}</td>
           <td>{{ item.author }}</td>
           <td>{{ item.is_borrowed ? item.borrower : "" }}</td>

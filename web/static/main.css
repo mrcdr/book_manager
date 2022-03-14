@@ -38,7 +38,7 @@ tbody td.button, tbody td.state {
 tbody tr td,
 tbody tr th {
   border-bottom: 1px solid #ccc;
-  padding: 0 5px;
+  padding: 5px 5px;
   transition: all 0.4s;
   max-width: 200px
 }
@@ -74,9 +74,15 @@ tbody tr td button.is_borrowed {
 
 .content{
   z-index:10;
-  width:50%;
+  width: 80%;
+  max-width: 480px;
   padding: 1em;
   background:#FFFFFF;
+}
+
+.content input {
+  width: 70%;
+  max-width: 200px;
 }
 
 .overlay{
@@ -92,4 +98,6 @@ tbody tr td button.is_borrowed {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
 }
