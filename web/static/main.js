@@ -115,7 +115,7 @@ new Vue({
         fetchData: function() {
             axios.get("/api/books")
             .then(response => {
-                this.books = response.data.books
+                this.books = response.data
             })
             .catch(error => {
                 console.log(error)

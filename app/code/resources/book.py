@@ -81,7 +81,7 @@ class Book(Resource):
 
 class BookList(Resource):
     def get(self):
-        return {"books": list(map(lambda x: x.json(), BookModel.query.all()))}
+        return list(map(lambda x: x.json(), BookModel.query.all()))
 
     @auth.login_required
     def post(self):
