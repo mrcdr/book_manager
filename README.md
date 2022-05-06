@@ -8,8 +8,8 @@ Web APIによる書籍貸し出しサンプルアプリです．
 2. [docker-compose.yml](docker-compose.yml)の管理者名・パスワードを編集する：
 ``` yaml
 environment:
-      - BM_ADMIN_NAME=admin
-      - BM_ADMIN_PASSWORD=password
+  - BM_ADMIN_NAME=admin
+  - BM_ADMIN_PASSWORD=password
 ```
 3. `docker-compose up`
 
@@ -30,4 +30,4 @@ environment:
 
 ## License
 
-[MIT](https://github.com/mrcdr/book_manager/blob/master/LICENSE)
+[MIT](https://github.com/mrcdr/book_manager/blob/main/LICENSE)
