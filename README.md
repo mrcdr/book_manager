@@ -13,6 +13,13 @@ environment:
 ```
 3. `docker-compose up`
 
+デフォルトポートは5000です．変更する場合は[docker-compose.yml](docker-compose.yml)の
+設定を編集してください：
+``` yaml
+ports:
+  - "5000:80"  # 5000を任意のポート番号に変更
+```
+
 ## URL仕様
 - `/` : ブラウザ向けインターフェース（アプリ）
 - `/api/` : Web API エンドポイント
