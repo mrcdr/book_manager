@@ -10,7 +10,7 @@ class BookModel(db.Model):
     author = db.Column(db.String(200))
     is_borrowed = db.Column(db.Boolean())
     borrower = db.Column(db.String(200))
-    borrow_date = db.Column(db.Date())
+    borrow_date = db.Column(db.String(50))
 
     def __init__(self, name, author):
         self.name = name
@@ -25,12 +25,12 @@ class BookModel(db.Model):
                 "author": self.author,
                 "is_borrowed": self.is_borrowed,
                 "borrower": self.borrower,
-                "borrow_date": self.borrow_date.strftime("%Y-%m-%d") if self.borrow_date else None}
+                "borrow_date": self.borrow_date if self.borrow_date else None}
 
     def borrow(self, borrower):
         self.is_borrowed = True
         self.borrower = borrower
-        self.borrow_date = datetime.datetime.now().date()
+        self.borrow_date = datetime.datetime.now(datetime.timezone.utc).isoformat()
 
     def take_back(self):
         self.is_borrowed = False

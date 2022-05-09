@@ -135,6 +135,14 @@ new Vue({
             .catch(error => {
                 console.log(error)
             })
+        },
+
+        format_date_str: function(iso_str, format="yyyy-MM-dd") {
+            dt = new Date(Date.parse(iso_str));
+            format = format.replace(/yyyy/g, dt.getFullYear());
+            format = format.replace(/MM/g, ('0' + (dt.getMonth() + 1)).slice(-2));
+            format = format.replace(/dd/g, ('0' + dt.getDate()).slice(-2));
+            return format;
         }
     }
 })

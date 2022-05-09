@@ -7,7 +7,6 @@
   <link rel="stylesheet" href="./main.css">
 </head>
 <body>
-
   <div id="app">
     <h1>書籍貸出管理</h1>
 
@@ -29,7 +28,7 @@
           <td>{{ item.name }}</td>
           <td>{{ item.author }}</td>
           <td>{{ item.is_borrowed ? item.borrower : "" }}</td>
-          <td>{{ item.is_borrowed ? item.borrow_date : "" }}</td>
+          <td>{{ item.is_borrowed ? format_date_str(item.borrow_date) : "" }}</td>
           <td class="button">
             <button v-on:click="edit(item)"
                     v-bind:class="{is_borrowed:item.is_borrowed}">
