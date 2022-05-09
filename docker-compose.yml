@@ -3,7 +3,7 @@ services:
   app:
     build: ./app
     volumes:
-      - /app_data
+      - app_data:/app_data
       - socket:/tmp
     environment:
       - BM_ADMIN_NAME=admin
@@ -21,3 +21,4 @@ services:
 
 volumes:
   socket:
+  app_data:
