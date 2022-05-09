@@ -25,6 +25,9 @@ ports:
 - `/api/` : Web API エンドポイント
 - `/swagger-ui/` : API仕様書
 
+## API仕様
+[こちら](https://mrcdr.github.io/book_manager/)を参照
+
 
 ## システムの構成要素
 ### サーバサイド
